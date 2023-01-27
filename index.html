@@ -9,14 +9,30 @@
     <link rel="stylesheet" href="" />
     <script src="./dateFormat.js" async defer></script>
     <script src="./liveTimer.js" async defer></script>
+    <script src="./infoCard.js" async defer></script>
   </head>
   <style>
     body {
-        height: 100vh;
-        font-size: 3rem;
+      height: 100vh;
       display: flex;
+      font-size: 2rem;
       justify-content: center;
       align-items: center;
+      align-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .card-container {
+      display: flex;
+      width: 100%;
+      font-size: 1rem;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
     }
   </style>
   <body>
@@ -32,6 +48,37 @@
     ></time-formatted> -->
 
     <live-timer id="elem"></live-timer>
+    <!-- <hr />  -->
+    <div class="card-container">
+      <user-card
+        name="John Doe"
+        avatar="https://randomuser.me/api/portraits/men/1.jpg"
+      >
+        <div slot="email">johndoe@gmail.com</div>
+        <div slot="phone">555-555-5555</div>
+      </user-card>
+      <user-card
+        name="Dwayne Doe"
+        avatar="https://randomuser.me/api/portraits/men/2.jpg"
+      >
+        <div slot="email">johndoe@gmail.com</div>
+        <div slot="phone">555-555-5555</div>
+      </user-card>
+      <user-card
+        name="Jane Doe"
+        avatar="https://randomuser.me/api/portraits/women/1.jpg"
+      >
+        <div slot="email">janedoe@gmail.com</div>
+        <div slot="phone">333-333-3333</div>
+      </user-card>
+      <user-card
+        name="Ginney Doe"
+        avatar="https://randomuser.me/api/portraits/women/2.jpg"
+      >
+        <div slot="email">janedoe@gmail.com</div>
+        <div slot="phone">333-333-3333</div>
+      </user-card>
+    </div>
 
     <script>
       elem.addEventListener('tick', (event) => console.log(event.detail));

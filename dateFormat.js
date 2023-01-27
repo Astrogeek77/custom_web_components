@@ -1,4 +1,4 @@
-class TimeFormatted extends HTMLElement {
+class TimeFormatted extends HTMLDivElement {
   // this custom component converts date to a formatted string
   connectedCallback() {
     let date = new Date(this.getAttribute('datetime') || Date.now());
