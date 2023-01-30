@@ -10,46 +10,33 @@
     <script src="./dateFormat.js" async defer></script>
     <script src="./liveTimer.js" async defer></script>
     <script src="./infoCard.js" async defer></script>
+    <script src="./expandableList.js" async defer></script>
   </head>
   <style>
     body {
       height: 100vh;
-      display: flex;
       font-size: 2rem;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
       flex-direction: column;
-      flex-wrap: wrap;
-      gap: 2rem;
+      justify-content: center;
+      padding: 2rem;
     }
 
     .card-container {
       display: flex;
-      width: 100%;
       font-size: 1rem;
       flex-wrap: wrap;
-      flex-direction: row;
       justify-content: center;
-      align-items: center;
       gap: 2rem;
+    }
+
+    #elem {
+      width: 100%;
+      text-align: center;
     }
   </style>
   <body>
-    <!-- <time-formatted
-      datetime="2023-01-26"
-      year="numeric"
-      month="long"
-      day="numeric"
-      hour="numeric"
-      minute="numeric"
-      second="numeric"
-      time-zone-name="short"
-    ></time-formatted> -->
 
-    <live-timer id="elem"></live-timer>
-    <!-- <hr />  -->
-    <div class="card-container">
+       <div class="card-container">
       <user-card
         name="John Doe"
         avatar="https://randomuser.me/api/portraits/men/1.jpg"
@@ -80,8 +67,37 @@
       </user-card>
     </div>
 
+    <!-- <time-formatted
+      datetime="2023-01-26"
+      year="numeric"
+      month="long"
+      day="numeric"
+      hour="numeric"
+      minute="numeric"
+      second="numeric"
+      time-zone-name="short"
+    ></time-formatted> -->
+
+    <live-timer id="elem"></live-timer>
+
+    <ul is="expandable-list" data-expanded="true">
+      <li>First</li>
+      <li>Second</li>
+      <ul is="expandable-list" data-expanded="true">
+        <li>First</li>
+        <li>Second</li>
+        <ul is="expandable-list" data-expanded="true">
+          <li>First</li>
+          <li>Second</li>
+        </ul>
+      </ul>
+    </ul>
+
+    <!-- <hr />  -->
+ 
+
     <script>
-      elem.addEventListener('tick', (event) => console.log(event.detail));
+      // elem.addEventListener('tick', (event) => console.log(event.detail));
     </script>
   </body>
 </html>
