@@ -15,7 +15,7 @@ class WeatherCard extends HTMLElement {
 
   connectedCallback() {
     // var xmlHttp = new XMLHttpRequest();
-    const url = `http://api.openweathermap.org/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=b86d21440d8c9a110912a2eb0845abb4`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=b86d21440d8c9a110912a2eb0845abb4`;
     // xmlHttp.open('GET', url, false);
     // xmlHttp.send(null);
     // console.log(xmlHttp.responseText);
