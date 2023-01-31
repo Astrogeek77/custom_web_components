@@ -6,37 +6,11 @@
     <title>Custom Web Components</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
-    <script src="./dateFormat.js" async defer></script>
-    <script src="./liveTimer.js" async defer></script>
-    <script src="./infoCard.js" async defer></script>
-    <script src="./expandableList.js" async defer></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <style>
-    body {
-      height: 100vh;
-      font-size: 2rem;
-      flex-direction: column;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .card-container {
-      display: flex;
-      font-size: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    #elem {
-      width: 100%;
-      text-align: center;
-    }
-  </style>
+  <style></style>
   <body>
-
-       <div class="card-container">
+    <div class="card-container">
       <user-card
         name="John Doe"
         avatar="https://randomuser.me/api/portraits/men/1.jpg"
@@ -80,6 +54,44 @@
 
     <live-timer id="elem"></live-timer>
 
+    <div class="progress-div">
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="50"
+        step="1"
+        name="progress-slider"
+        id="progress-slider"
+      />
+      <div class="progress-value">Progress: 50%</div>
+      <progress-bar percent="50"></progress-bar>
+    </div>
+
+    <div class="app">
+      <info-card-2
+        name="Murph"
+        avatar="https://randomuser.me/api/portraits/men/3.jpg"
+      >
+        <span slot="occupation">Developer</span>
+        <span slot="age">23 Years</span>
+      </info-card-2>
+      <info-card-2
+        name="Gabbar"
+        avatar="https://randomuser.me/api/portraits/men/4.jpg"
+      >
+        <span slot="occupation">Engineer</span>
+        <span slot="age">55 Years</span>
+      </info-card-2>
+      <info-card-2
+        name="Shiro"
+        avatar="https://randomuser.me/api/portraits/men/5.jpg"
+      >
+        <span slot="occupation">Painter</span>
+        <span slot="age">32 Years</span>
+      </info-card-2>
+    </div>
+
     <ul is="expandable-list" data-expanded="true">
       <li>First</li>
       <li>Second</li>
@@ -93,11 +105,30 @@
       </ul>
     </ul>
 
-    <!-- <hr />  -->
- 
+    <div class="weather-div">
+      <weather-card latitude="30.9010" longitude="75.8573"></weather-card>
+      <weather-card longitude="85.8245" latitude="20.296"></weather-card>
+      <weather-card latitude="40.730610" longitude="-73.935242"></weather-card>
+    </div>
 
+    <script src="./weather-card/weather-card.js"></script>
+    <script src="./date-time components/liveTimer.js"></script>
+    <script src="./expandable list/expandableList.js"></script>
+    <script src="./infocard/infoCard.js"></script>
+    <script src="./progress bar/progressBar.js"></script>
+    <script src="./infocard2/infoCard2.js"></script>
+    <!-- <script src="./index.js" type="module"></script> -->
     <script>
       // elem.addEventListener('tick', (event) => console.log(event.detail));
+      const slider = document.querySelector('#progress-slider');
+      const progressValue = document.querySelector('.progress-value');
+      const progressBar = document.querySelector('progress-bar');
+
+      slider.addEventListener('change', () => {
+        console.log(slider.value);
+        progressValue.innerText = 'Progress: ' + slider.value + '%';
+        progressBar.setAttribute('percent', slider.value);
+      });
     </script>
   </body>
 </html>

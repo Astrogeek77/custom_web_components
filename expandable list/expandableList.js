@@ -18,8 +18,8 @@ class ExpandableList extends HTMLUListElement {
     this.toggleBtn.style.top = 0;
     this.toggleBtn.style.left = '-10px';
     this.toggleBtn.style.cursor = 'pointer';
-      this.toggleBtn.style.fontSize = '25px';
-      this.toggleBtn.style.transition = 'all 0.5s'
+    this.toggleBtn.style.fontSize = '25px';
+    this.toggleBtn.style.transition = 'all 0.5s';
 
     this.toggleBtn.innerText = '>';
 
@@ -49,7 +49,7 @@ class ExpandableList extends HTMLUListElement {
     const transform = this.isExpanded ? 'rotate(90deg)' : '';
     this.toggleBtn.style.transform = transform;
 
-      ;[...this.children].forEach((child) => {
+    [...this.children].forEach((child) => {
       if (child !== this.toggleBtn) {
         child.style.display = this.isExpanded ? '' : 'none';
       }
@@ -57,4 +57,6 @@ class ExpandableList extends HTMLUListElement {
   }
 }
 
-customElements.define('expandable-list', ExpandableList, { extends: 'ul' });
+window.customElements.define('expandable-list', ExpandableList, {
+  extends: 'ul',
+});

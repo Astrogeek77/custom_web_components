@@ -47,6 +47,7 @@ class UserCard extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
+    console.log(this.getAttribute('name'), this.getAttribute('avatar'));
     this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
   }
 
@@ -56,7 +57,7 @@ class UserCard extends HTMLElement {
     const info = this.shadowRoot.querySelector('.info');
     const toggleBtn = this.shadowRoot.querySelector('#toggle-info');
 
-    if(this.showInfo) {
+    if (this.showInfo) {
       info.style.display = 'block';
       toggleBtn.innerText = 'Hide Info';
     } else {
@@ -66,7 +67,9 @@ class UserCard extends HTMLElement {
   }
 
   connectedCallback() {
-    this.shadowRoot.querySelector('#toggle-info').addEventListener('click', () => this.toggleInfo());
+    this.shadowRoot
+      .querySelector('#toggle-info')
+      .addEventListener('click', () => this.toggleInfo());
   }
 
   disconnectedCallback() {

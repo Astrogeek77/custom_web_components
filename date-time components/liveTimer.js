@@ -28,4 +28,5 @@ class LiveTimer extends HTMLElement {
   }
 }
 
-customElements.define('live-timer', LiveTimer);
+window.customElements.define('live-timer', LiveTimer);
+// export default LiveTimer;
