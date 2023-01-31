@@ -10,6 +10,17 @@
   </head>
   <style></style>
   <body>
+    <label for="component-select">Choose a Web Component:</label>
+    <select name="components" id="component-select">
+      <option value="">--Please choose an option--</option>
+      <option value="user-card-1">User Card 1</option>
+      <option value="live-timer">Live Timer</option>
+      <option value="progress-bar">Progress Bar</option>
+      <option value="user-card-2">User Card 2</option>
+      <option value="expandable-list">Expandable List</option>
+      <option value="weather-card">Weather Card</option>
+    </select>
+
     <div class="card-container">
       <user-card
         name="John Doe"
@@ -117,7 +128,7 @@
     <script src="./infocard/infoCard.js"></script>
     <script src="./progress bar/progressBar.js"></script>
     <script src="./infocard2/infoCard2.js"></script>
-    <!-- <script src="./index.js" type="module"></script> -->
+    <script src="./index.js"></script>
     <script>
       // elem.addEventListener('tick', (event) => console.log(event.detail));
       const slider = document.querySelector('#progress-slider');

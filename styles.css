@@ -5,7 +5,7 @@
 }
 
 body {
-  height: 100vh;
+  /* height: 100vh; */
   font-size: 2rem;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +13,11 @@ body {
   display: grid;
   place-items: center;
   grid-gap: 5rem;
+}
+
+select {
+  padding: 0.25rem;
+  font-size: 1rem;
 }
 
 .card-container {
