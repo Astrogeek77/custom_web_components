@@ -7,6 +7,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./side-links.css" />
   </head>
   <style></style>
   <body>
@@ -122,6 +123,34 @@
       <weather-card latitude="40.730610" longitude="-73.935242"></weather-card>
     </div>
 
+    <!-- Side Links Only -->
+    <div class="side-links">
+      <a
+        href="https://icodergautam.netlify.app"
+        target="_blank"
+        class="side-link side-link-website"
+      >
+        <i class="fab fa-website-square side-link-icon"></i>
+        <span class="side-link-text">View Website</span>
+      </a>
+      <a
+        href="https://github.com/astrogeek77"
+        target="_blank"
+        class="side-link side-link-github side-link-icon"
+      >
+        <i class="fab fa-github-square"></i>
+        <span class="side-link-text">View GitHub</span>
+      </a>
+      <a
+        href="https://linkedin.com/in/astrogeek77"
+        target="_blank"
+        class="side-link side-link-linkedin"
+      >
+        <i class="fab fa-linkedin-square side-link-icon"></i>
+        <span class="side-link-text">View Linkedin</span>
+      </a>
+    </div>
+
     <script src="./weather-card/weather-card.js"></script>
     <script src="./date-time components/liveTimer.js"></script>
     <script src="./expandable list/expandableList.js"></script>
@@ -131,15 +160,15 @@
     <script src="./index.js"></script>
     <script>
       // elem.addEventListener('tick', (event) => console.log(event.detail));
-      const slider = document.querySelector('#progress-slider');
-      const progressValue = document.querySelector('.progress-value');
-      const progressBar = document.querySelector('progress-bar');
+      const slider = document.querySelector('#progress-slider')
+      const progressValue = document.querySelector('.progress-value')
+      const progressBar = document.querySelector('progress-bar')
 
       slider.addEventListener('change', () => {
-        console.log(slider.value);
-        progressValue.innerText = 'Progress: ' + slider.value + '%';
-        progressBar.setAttribute('percent', slider.value);
-      });
+        console.log(slider.value)
+        progressValue.innerText = 'Progress: ' + slider.value + '%'
+        progressBar.setAttribute('percent', slider.value)
+      })
     </script>
   </body>
 </html>
